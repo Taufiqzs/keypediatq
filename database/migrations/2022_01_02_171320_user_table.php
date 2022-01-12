@@ -18,9 +18,9 @@ class UserTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('address');
-            $table->string('gender');
-            $table->date('dateofbirth');
+            $table->string('address')->nullable();
+            $table->string('gender')->nullable();
+            $table->dateTime('dateofbirth', $precision = 0)->nullable();
 
             $table->rememberToken();
             $table->timestamps();

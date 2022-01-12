@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\keypediacontro;
+
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::get('/loginpage', [keypediacontro::class, 'indexlogin']);
 
 
 
+Route::get('/auth/register', [App\Http\Controllers\RegisterController::class, 'store'])->name('store');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

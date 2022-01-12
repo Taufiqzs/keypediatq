@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layout.mainlayout')
 
-@section('content')
+@section('contentkp')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -65,9 +65,12 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
                            
                             <div class="col-md-6">
-                                <input id="gender" type="gender" class="form-control @error('gender') is-invalid @enderror" value="{{ old('gender') }}"name="gender" required autocomplete="new-gender">
-
-                                
+                             
+                                <input id="gender" type="radio" class="form-control @error('gender') is-invalid @enderror" value="Male"name="gender" >
+                                <label for="html">Male</label>
+                                <input id="gender" type="radio" class="form-control @error('gender') is-invalid @enderror" value="Female"name="gender" >
+                                <label for="html">Female</label>
+                           
                                 @error('gender')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,7 +86,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
+                                <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address">
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -93,11 +96,12 @@
                             </div>
                         </div>
 
+                     
                         <div class="row mb-3">
                             <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('DateofBirth') }}</label>
 
                             <div class="col-md-6">
-                                <input id="date" type="date" class="form-control @error('date') is-invalid @enderror"value="{{ old('date') }}"  required autocomplete="new-date">
+                                <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" value="date" >
 
                                 @error('date')
                                     <span class="invalid-feedback" role="alert">
@@ -106,7 +110,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                   
 
 
 
