@@ -56,17 +56,10 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:3', 'confirmed'],
             'address' => ['max:255'],
             'gender' => [ 'max:255'],
-            'dateofbirth' => ['date']
+           
         ]);
     }
 
-    public function store(Request $request)
-    {
-    
-        $data = $request->all();
-        $data['dateofbirth'] = Carbon::createFromFormat('m/d/Y', $request->dateofbirth)->format('Y-m-d');
-        return  $data['dateofbirth'];
-    }
 
 
     /**
@@ -77,15 +70,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::find(1);
-        $user->dateofbirth =  $data['dateofbirth'];
+       
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'address' => $data['address'],
             'gender' => $data['gender'],
-            'dateofbirth' => Carbon::createFromFormat('m/d/Y',  $data['dateofbirth'])->format('Y-m-d')
+           
             
         ]); 
     
