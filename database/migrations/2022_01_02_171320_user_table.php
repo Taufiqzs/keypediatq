@@ -21,6 +21,7 @@ class UserTable extends Migration
             $table->string('address')->nullable();
             $table->string('gender')->nullable();
             $table->dateTime('dateofbirth', $precision = 0)->nullable();
+            $table->string('role')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

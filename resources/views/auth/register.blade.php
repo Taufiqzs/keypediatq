@@ -98,12 +98,12 @@
 
                      
                         <div class="row mb-3">
-                            <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('DateofBirth') }}</label>
+                            <label for="dateofbirth" class="col-md-4 col-form-label text-md-end">{{ __('DateofBirth') }}</label>
 
                             <div class="col-md-6">
-                                <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" value="date" >
+                                <input id="dateofbirth" type="date" class="form-control @error('dateofbirth') is-invalid @enderror" name="dateofbirth" required >
 
-                                @error('date')
+                                @error('dateofbirth')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

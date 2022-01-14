@@ -28,12 +28,6 @@ class User extends Authenticatable
         'dateofbirth',
     ];
 
-    public  function setTransactionDateAttribute($value)
-    {
-        $this->attributes['dateofbirth'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
-        return $value;
-        
-    }
     /**
      * The attributes that should be hidden for serialization.
      *
