@@ -1,0 +1,9 @@
+.pad-x-1 {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.pad-y-1 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
