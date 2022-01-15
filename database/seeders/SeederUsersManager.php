@@ -24,5 +24,14 @@ class SeederUsersManager extends Seeder
             'gender'=>'Male',
             'dateofbirth' => Carbon::create('2000', '11', '20')
         ]);
+
+        DB::table('manager')->insert([
+            'name'=>'Akip Tsaqif',
+            'email'=>'akiptsaqif@gmail.com',
+            'password'=>Hash::make('akeeppwd'),
+            'address'=>'Jl. Taman Jelita No.9',
+            'gender'=>'Male',
+            'dateofbirth' => Carbon::create('1998', '12', '07')
+        ]);
     }
 }

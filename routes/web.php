@@ -2,6 +2,8 @@
 use App\Http\Controllers\keypediacontro;
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,11 +23,13 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/homepage', [keypediacontro::class, 'index']);
+Route::get('/homepage', [HomeController::class, 'listCategories']);
 Route::get('/registerpage', [keypediacontro::class, 'indexregister']);
 Route::post('/loginpage', [keypediacontro::class, 'keypedialogin']);
 Route::get('/loginpage', [keypediacontro::class, 'indexlogin']);
-
+Route::get('/manageCategory', [CategoryController::class, 'listCategories']);
+Route::put('/manageCategory/update/{id}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
+Route::delete('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
 
 
 
